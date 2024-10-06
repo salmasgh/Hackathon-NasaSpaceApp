@@ -24,7 +24,5 @@ The API requires the following query parameters:
 
 ### Example Request
 
-```http
-GET http://localhost:5000/api/data?bounding_box=-120.0,35.0,-100.0,50.0
 
 
