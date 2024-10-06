@@ -6,3 +6,29 @@
     justify-content: center;
     align-items: center;
 }
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    column-gap: 100px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+#loading-data {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixes the loader in place */
+    top: 50%; /* Centers the loader vertically */
+    left: 50%; /* Centers the loader horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for its own width/height */
+    font-size: 20px; /* Font size */
+    color: blue; /* Text color */
+    background-color: rgba(255, 255, 255, 0.8); /* Background with slight transparency */
+    padding: 10px; /* Padding around text */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    z-index: 1000; /* Places it above other elements */
+}

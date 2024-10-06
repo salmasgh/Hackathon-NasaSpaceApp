@@ -1,13 +1,12 @@
 {
-    "labels": ["Soil Moisture", "Albedo", "Vegetation Water Content"],
+    "labels": ["Sand Fraction" , "Clay Fraction", "Organic Content"],
     "datasets": [
         {
-            "label": "Percentage %",
-            "data": [0.05681554, 0.31861073, 1.23],
+            "label": "",
+            "data": [0.05681554, 0.24657121, 0.31861073],
             "backgroundColor": "rgba(75, 192, 192, 0.6)",
             "borderColor": "rgba(75, 192, 192, 1)",
             "borderWidth": 1
         }
     ]
 }
-

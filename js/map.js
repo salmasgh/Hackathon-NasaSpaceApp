@@ -111,9 +111,11 @@ function finalizeSquare() {
 
         // Fetch data from the API
         console.log("fetching data");
+        const loadingData = document.getElementById('loading-data');
+        loadingData.innerText = 'Loading data...';
+        loadingData.style.display = 'block';
         fetch(`http://localhost:5000/api/data?bounding_box=${lowerLeftLon}&bounding_box=${lowerLeftLat}&bounding_box=${upperRightLon}&bounding_box=${upperRightLat}`)
             .then(response => {
-                console.log(response);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -121,10 +123,12 @@ function finalizeSquare() {
             })
             .then(data => {
                 // Process the data and update the UI as needed
-                console.log(data); // For debugging, you can remove this later
+                console.log(data); 
 
-                // Example: Display the data in a div
-                document.getElementById('data-display').innerText = JSON.stringify(data, null, 2);
+                updateBarChart(data);
+                updatePieChart(data);
+
+                
             })
             .catch(error => {
                 console.error('There was a problem with the fetch operation:', error);
@@ -135,7 +139,8 @@ function finalizeSquare() {
         // Reset state
         points = [];
         isDrawing = false;
-        document.getElementById('draw-button').disabled = false;
+        loadingData.innerText = ''; 
+        loadingData.style.display = 'none';
     }
 }
 
@@ -144,7 +149,6 @@ function finalizeSquare() {
 function enableDrawSquareMode() {
     points = [];
     isDrawing = false;
-    document.getElementById('draw-button').disabled = true;
 
     if (marker1) {
         map.removeLayer(marker1);
